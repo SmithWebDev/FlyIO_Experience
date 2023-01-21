@@ -40,6 +40,8 @@ class NamesController < ApplicationController
       if @name.update(name_params)
         format.html { redirect_to name_url(@name), notice: "Name was successfully updated." }
         format.json { render :show, status: :ok, location: @name }
+
+        @name.broadcast_replace_later_to 'names', partial: 'names/name'
       else
         format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @name.errors, status: :unprocessable_entity }
