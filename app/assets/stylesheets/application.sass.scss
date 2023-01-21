@@ -1,1 +1,14 @@
 // Entry point for your Sass build
+#names {
+  display: grid;
+  grid-template-columns: 1fr max-content;
+  margin: 1em;
+}
+
+#names strong {
+  display: none;
+}
+
+#names p {
+  margin: 0.2em;
+}

@@ -1,3 +1,4 @@
 Rails.application.routes.draw do
-  root "rails/welcome#index"
+  resources :names
+  root "names#index"
 end
